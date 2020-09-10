@@ -46,11 +46,11 @@ public class Card {
         if (created == false) {
             System.out.println("\nDeck is Empty!\n");
         } else {
-            if (numCards > remainingCards) {
-                if(remainingCards == 0){
+            if (numCards > remainingCards || remainingCards == 0) {
+                if (remainingCards == 0) {
                     System.out.println("\nDeck is Empty!\n");
-                }else{
-                System.out.println("\nCard in Deck is lesser than you want!\n");
+                } else {
+                    System.out.println("\nCard in Deck is lesser than you want!\n");
                 }
             } else {
                 System.out.print("\n");
@@ -62,28 +62,11 @@ public class Card {
                     count++;
                     remainingCards--;
                 }
-                System.out.println("\nRemaining Cards: " + remainingCards+"\n");
+                System.out.println("\nRemaining Cards: " + remainingCards + "\n");
             }
         }
     }
-    
-//This is to display all cards including the cards that has been dealed
-//    public void display() {
-//        if (created == false) {
-//            System.out.println("Deck is Empty!");
-//        } else {
-//            for (int i = 0; i < 52; i++) {
-//                String suit = suits[deck[i] / 13];
-//                String rank = ranks[deck[i] % 13];
-//                System.out.println(rank + " of " + suit);
-//            }
-//            System.out.println("Number of Cards: " + deck.length);
-//        }
-//
-//    }
-    
- 
-//This is display all cards in deck not included the dealed cards
+
     public void display() {
         if (created == false) {
             System.out.println("\nDeck is Empty!\n");
@@ -94,10 +77,9 @@ public class Card {
                     String suit = suits[deck[i] / 13];
                     String rank = ranks[deck[i] % 13];
                     System.out.println(rank + " of " + suit);
-                    remainingCards--;
                 }
-                System.out.println("\nRemaining Cards: " + remainingCards+"\n");
-            }else{
+                System.out.print("\n");
+            } else {
                 System.out.println("\nDeck is Empty!\n");
             }
         }
